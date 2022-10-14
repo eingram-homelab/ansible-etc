@@ -1,14 +1,11 @@
-[pi]
-dietpi1.local.lan ansible_host=192.168.1.249
-
 [piholes]
-pihole.local.lan 
-pihole2.local.lan 
+dietpi1.local.lan ansible_host=192.168.1.249
+dietpi2.local.lan ansible_host=192.168.1.251
 
 [Linux]
 upsmon.local.lan
 pihole2.local.lan
-pi
+dietpi1.local.lan
 
 [digitalocean]
 yc-appsrv1
