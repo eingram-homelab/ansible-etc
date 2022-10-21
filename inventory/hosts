@@ -5,6 +5,7 @@ dietpi2.local.lan ansible_host=192.168.1.251
 [Linux]
 upsmon.local.lan
 dietpi1.local.lan
+k3s-prod3.local.lan
 
 [digitalocean]
 yc-appsrv1
