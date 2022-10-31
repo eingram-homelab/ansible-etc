@@ -1,0 +1,26 @@
+---
+version: 1
+
+build_arg_defaults:
+ EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8:latest'
+
+# ansible_config: 'ansible.cfg'
+
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  # system: bindep.txt
+
+additional_build_steps:
+        #  prepend: |
+        #    RUN whoami
+        #    RUN cat /etc/os-release
+  append:
+    - RUN dnf install -y dnf-plugins-core
+    - RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    - RUN dnf install -y terraform
+    - RUN export TF_CLI_ARGS_apply='-parallelism=1'
+    - RUN export TF_CLI_ARGS_destroy='-parallelism=1'
+    - RUN export VAULT_ADDR=http://vault.local.lan:8200
+    - RUN export VAULT_TOKEN=dev-token
+          #    - RUN ls -la /etc
