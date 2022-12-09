@@ -15,3 +15,18 @@ ansible_user=ansible
 
 [apps]
 grafana.local.lan ansible_host=podhost1.local.lan
+
+[winworkgroup]
+bo-pc.local.lan
+edward-pc.local.lan
+yesenia-hp-laptop.local.lan
+charlize-pc.local.lan
+veeam.local.lan
+
+[winworkgroup:vars]
+ansible_user=eingram
+ansible_become_method=runas
+ansible_become_user=eingram
+ansible_connection=winrm
+ansible_port=5985
+ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
