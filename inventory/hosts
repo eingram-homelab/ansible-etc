@@ -23,6 +23,12 @@ yesenia-hp-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 veeam.local.lan
 
+[winclients]
+bo-pc.local.lan
+edward-pc.local.lan
+yesenia-hp-laptop.local.lan
+charlize-pc.local.lan
+
 [winworkgroup:vars]
 ansible_user=eingram
 ansible_become_method=runas
