@@ -1,6 +1,6 @@
 # Virtual environment contents:
-ansible==6.7.0
-ansible-core==2.13.7
+ansible==6.5.0
+ansible-core==2.13.5
 certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
