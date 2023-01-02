@@ -16,6 +16,7 @@ additional_build_steps:
     - RUN yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
     - RUN dnf install -y terraform
     - RUN dnf install -y mysql
+    - RUN curl https://packages.microsoft.com/config/rhel/8/prod.repo > /etc/yum.repos.d/microsoft.repo
     - RUN dnf install -y powershell
     - ADD vault.ca /etc/vault.ca
     - USER 1000
