@@ -16,20 +16,20 @@ ansible_user=ansible
 [apps]
 grafana.local.lan ansible_host=podhost1.local.lan
 
-[winworkgroup]
+[WindowsWG]
 bo-pc.local.lan mac_address=1c:1b:0d:38:a9:d6
 edward-pc.local.lan mac_address=10:7b:44:4c:71:a6
 yesenia-hp-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
-veeam.local.lan
 
-[winclients]
+
+[WindowsWGClients]
 bo-pc.local.lan
 edward-pc.local.lan
 yesenia-hp-laptop.local.lan
 charlize-pc.local.lan
 
-[winworkgroup:vars]
+[WindowsWGClients:vars]
 ansible_user=eingram
 ansible_become_method=runas
 ansible_become_user=eingram
