@@ -10,6 +10,7 @@ collections:
   - google.cloud
   - chocolatey.chocolatey
   - community.hashi_vault
+  - community.windows
   - name: https://github.com/eingram23/ansible-col-homelab.git
     type: git
     version: main
