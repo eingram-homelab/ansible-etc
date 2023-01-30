@@ -8,7 +8,7 @@ dietpi1.local.lan
 k3s-prod3.local.lan
 
 [digitalocean]
-yc-appsrv1
+yc-appsrv1.ycdisp.net
 
 [digitalocean:vars]
 ansible_user=ansible
