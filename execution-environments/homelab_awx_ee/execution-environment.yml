@@ -20,7 +20,5 @@ additional_build_steps:
     - ENV TF_CLI_ARGS_apply=-parallelism=1 \
           TF_CLI_ARGS_destroy=-parallelism=1 \
           TF_LOG=INFO \
-          VAULT_ADDR=https://vault.local.lan \
-          VAULT_CACERT=/etc/vault.ca
     - USER 1000
     - RUN git lfs install
