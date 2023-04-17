@@ -2,26 +2,27 @@
 dietpi1.local.lan ansible_host=192.168.1.250
 dietpi2.local.lan ansible_host=192.168.1.251
 
+[piholes:vars]
+ansible_user=ansible
+ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+
 [Linux]
-upsmon.local.lan
 dietpi1.local.lan
-k3s-prod3.local.lan
+dietpi2.local.lan
+test2.local.lan ansible_host=10.10.0.94
 
 [digitalocean]
 yc-appsrv1.ycdisp.net
 
 [digitalocean:vars]
 ansible_user=ansible
-
-[apps]
-grafana.local.lan ansible_host=podhost1.local.lan
+ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
 
 [WindowsWG]
 bo-pc.local.lan mac_address=1c:1b:0d:38:a9:d6
 edward-pc.local.lan mac_address=10:7b:44:4c:71:a6
 yesenia-hp-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
-
 
 [WindowsWGClients]
 bo-pc.local.lan
