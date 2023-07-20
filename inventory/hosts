@@ -2,6 +2,8 @@
 HL-SRV1 ansible_host=10.10.0.12 
 HL-SQL1 ansible_host=10.10.0.18
 HL-DC1 ansible_host=10.10.0.10
+HL-CLUS16-1 ansible_host=10.10.0.41
+HL-CLUS16-2 ansible_host=10.10.0.42
 
 [ntlm_test:vars]
 ansible_connection=winrm 
