@@ -26,7 +26,6 @@ ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwor
 [Linux]
 dietpi1.local.lan
 dietpi2.local.lan
-test2.local.lan ansible_host=10.10.0.94
 
 [digitalocean]
 yc-appsrv1.ycdisp.net
