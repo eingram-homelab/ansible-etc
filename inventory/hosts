@@ -4,6 +4,7 @@ HL-SQL1 ansible_host=10.10.0.18
 HL-DC1 ansible_host=10.10.0.10
 HL-CLUS16-1 ansible_host=10.10.0.41
 HL-CLUS16-2 ansible_host=10.10.0.42
+VEEAM ansible_host=192.168.1.216
 
 [ntlm_test:vars]
 ansible_connection=winrm 
