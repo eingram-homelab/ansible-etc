@@ -8,8 +8,8 @@ VEEAM ansible_host=192.168.1.216
 
 [ntlm_test:vars]
 ansible_connection=winrm 
-ansible_user=eingram 
-ansible_become_user=eingram 
+ansible_user=ansible 
+ansible_become_user=ansible 
 ansible_port=5985 
 ansible_become_method=runas 
 ansible_winrm_transport=ntlm
@@ -47,10 +47,10 @@ yesenia-hp-laptop.local.lan
 charlize-pc.local.lan
 
 [WindowsWGClients:vars]
-ansible_user=eingram
+ansible_user=ansible
 ansible_become_method=runas
-ansible_become_user=eingram
-ansible_connection=winrm
+ansible_become_user=ansible
+ansible_connection=psrp
 ansible_port=5985
 ansible_winrm_transport=kerberos
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
