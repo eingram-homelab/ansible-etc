@@ -39,14 +39,9 @@ bo-pc.local.lan mac_address=1c:1b:0d:38:a9:d6
 enthub.local.lan mac_address=a0:36:bc:34:1d:c2
 yesenia-hp-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
+veeam.local.lan mac_address=00:00:00:00:00:01
 
-[WindowsWGClients]
-bo-pc.local.lan
-enthub.local.lan
-yesenia-hp-laptop.local.lan
-charlize-pc.local.lan
-
-[WindowsWGClients:vars]
+[WindowsWG:vars]
 ansible_user=ansible
 ansible_become_method=runas
 ansible_become_user=ansible
