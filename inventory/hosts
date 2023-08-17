@@ -7,7 +7,7 @@ HL-CLUS16-2 ansible_host=10.10.0.42
 VEEAM ansible_host=192.168.1.216
 
 [ntlm_test:vars]
-ansible_connection=winrm 
+ansible_connection=psrp 
 ansible_user=ansible 
 ansible_become_user=ansible 
 ansible_port=5985 
@@ -41,11 +41,11 @@ yesenia-hp-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 veeam.local.lan mac_address=00:00:00:00:00:01
 
-[WindowsWG:vars]
-ansible_user=ansible
-ansible_become_method=runas
-ansible_become_user=ansible
-ansible_connection=psrp
-ansible_port=5985
-ansible_winrm_transport=kerberos
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+# [WindowsWG:vars]
+# ansible_user=ansible
+# ansible_become_method=runas
+# ansible_become_user=ansible
+# ansible_connection=psrp
+# ansible_port=5985
+# ansible_winrm_transport=kerberos
+# ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
