@@ -1,2 +1,3 @@
+python39-devel [package:rpm]
 krb5-devel [platform:rpm]
 gcc [platform:rpm]
