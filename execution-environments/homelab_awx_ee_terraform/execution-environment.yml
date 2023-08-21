@@ -8,8 +8,8 @@ dependencies:
 additional_build_steps:
   append:
     - RUN alternatives --set python /usr/bin/python3
-    - COPY --from=quay.io/ansible/receptor:devel /usr/bin/receptor /usr/bin/receptor
-    - RUN mkdir -p /var/run/receptor
+    # - COPY --from=quay.io/ansible/receptor:devel /usr/bin/receptor /usr/bin/receptor
+    # - RUN mkdir -p /var/run/receptor
     - RUN dnf install -y yum-utils
     - RUN yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
     - RUN dnf install -y terraform
@@ -18,4 +18,4 @@ additional_build_steps:
           TF_CLI_ARGS_destroy=-parallelism=1 \
           TF_LOG=INFO
     - USER 1000
-    - RUN git lfs install
+    # - RUN git lfs install --system
