@@ -1,0 +1,9 @@
+# Virtual environment contents:
+pyvmomi==8.0.1.02
+hvac==1.1.1
+pywinrm==0.4.3
+pypsrp==0.8.1
+ansible-runner==2.2.3
+jsonpatch==1.33
+gssapi==1.8.2
+krb5==0.5.0
