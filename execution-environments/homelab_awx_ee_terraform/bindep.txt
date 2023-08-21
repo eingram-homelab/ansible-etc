@@ -1,5 +1,5 @@
-python311-devel [platform:rpm compile]
+python3.11-devel [platform:rpm compile]
 subversion [platform:rpm]
 subversion [platform:dpkg]
 git-lfs [platform:rpm]
-krb-config [platform:rpm]
+krb5-config [platform:rpm]
