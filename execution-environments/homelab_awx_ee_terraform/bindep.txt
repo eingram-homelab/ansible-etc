@@ -1,4 +1,3 @@
-python-devel [package:rpm]
-python3-devel [package:rpm]
+python3.8-devel [package:rpm]
 krb5-devel [platform:rpm]
 gcc [platform:rpm]
