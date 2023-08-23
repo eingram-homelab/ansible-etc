@@ -2,5 +2,7 @@
 pyvmomi==8.0.1.0.2
 hvac==1.1.1
 jsonpatch==1.33
-# gssapi==1.8.2
+krb5==0.5.0
+gssapi==1.8.2
+
 

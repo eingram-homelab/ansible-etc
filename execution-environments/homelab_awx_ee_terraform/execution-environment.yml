@@ -7,7 +7,7 @@ dependencies:
   python: requirements.txt
 additional_build_steps:
   append:
-    - RUN alternatives --set python /usr/bin/python3
+    # - RUN alternatives --set python /usr/bin/python3
     # - COPY --from=quay.io/ansible/receptor:devel /usr/bin/receptor /usr/bin/receptor
     # - RUN mkdir -p /var/run/receptor
     - RUN dnf install -y yum-utils
