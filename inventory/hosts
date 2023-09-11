@@ -35,11 +35,11 @@ ansible_user=ansible
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
 
 [WindowsWG]
-BO-PC.local.lan mac_address=1c:1b:0d:38:a9:d6
-ENTHUB.local.lan mac_address=a0:36:bc:34:1d:c2
-YESENIA-HP-LAPTOP.local.lan mac_address=80:e8:2c:9c:e9:90
-CHARLIZE-PC.local.lan mac_address=1c:1b:0d:31:98:16
-YESENIA-LAPTOP.local.lan mac_address=e4:5e:37:31:8c:e2
+bo-pc.local.lan mac_address=1c:1b:0d:38:a9:d6
+enthub.local.lan mac_address=a0:36:bc:34:1d:c2
+yesenia-hp-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
+charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
+yesenia-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
 [WindowsWG:vars]
 ansible_user=ansible
