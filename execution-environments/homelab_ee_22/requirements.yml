@@ -1,9 +1,0 @@
----
-collections:
-  # - name: community.vmware
-  # - name: community.general
-  # - name: containers.podman
-  # - name: ansible.windows
-  # - name: community.mysql
-  # - name: kubernetes.core
-  # - name: lvrfrc87.git_acp

@@ -1,7 +1,0 @@
-# Virtual environment contents:
-pyvmomi==7.0.3
-hvac==1.0.2
-pywinrm==0.4.3
-ansible-runner>=2.2.1
-jsonpatch==1.32
-kubernetes=25.3.0
