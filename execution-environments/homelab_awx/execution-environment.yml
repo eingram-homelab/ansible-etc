@@ -5,6 +5,7 @@ build_arg_defaults:
 dependencies:
   system: bindep.txt
   python: requirements.txt
+  galaxy: requirements.yml
 additional_build_steps:
   prepend: |
     RUN whoami
