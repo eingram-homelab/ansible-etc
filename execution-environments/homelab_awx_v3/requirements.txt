@@ -1,5 +1,4 @@
 # Virtual environment contents:
-ansible-core==2.13.13
 pyvmomi==8.0.1.0.2
 hvac==1.2.1
 jsonpatch==1.33
