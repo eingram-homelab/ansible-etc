@@ -1,5 +1,1 @@
-subversion [platform:rpm]
-subversion [platform:dpkg]
-git-lfs [platform:rpm]
-krb5-devel [platform:rpm]
-gcc [platform:rpm]
+# Add additional binaries here
