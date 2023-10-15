@@ -1,4 +1,3 @@
-python38-devel [platform:rpm compile]
 git [platform:centos-8]
 krb5-devel [platform:centos-8]
 gcc [platform:centos-8]
