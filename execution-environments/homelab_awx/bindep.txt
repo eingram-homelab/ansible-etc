@@ -1,4 +1,7 @@
 python38-devel [platform:rpm compile]
+python38-cffi [platform:rpm]
+python38-cryptography [platform:rpm]
+python38-pycparser [platform:rpm]
 subversion [platform:rpm]
 subversion [platform:dpkg]
 git-lfs [platform:rpm]
