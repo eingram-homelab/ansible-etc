@@ -21,6 +21,10 @@ ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwor
 dietpi1.local.lan
 dietpi2.local.lan
 
+[Windows:children]
+WindowsWG
+WindowsHL
+
 [digitalocean]
 yc-appsrv1.ycdisp.net
 
