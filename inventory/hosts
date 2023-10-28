@@ -1,14 +1,3 @@
-[ntlm_test]
-
-[ntlm_test:vars]
-ansible_connection=winrm 
-ansible_user=ansible 
-ansible_become_user=ansible 
-ansible_port=5985 
-ansible_become_method=runas 
-ansible_winrm_transport=ntlm
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
-
 [piholes]
 dietpi1.local.lan ansible_host=192.168.1.250
 dietpi2.local.lan ansible_host=192.168.1.251
