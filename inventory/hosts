@@ -21,6 +21,8 @@ yc-appsrv1.ycdisp.net
 ansible_user=ansible
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
 
+[WindowsHL]
+
 [WindowsWG]
 bo-pc.local.lan mac_address=1c:1b:0d:38:a9:d6
 enthub.local.lan mac_address=a0:36:bc:34:1d:c2
