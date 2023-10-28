@@ -1,1 +1,2 @@
 # Add additional binaries here
+krb5-devel [platform:rpm]
