@@ -4,7 +4,6 @@ hvac==1.2.1
 jsonpatch==1.33
 krb5==0.5.1
 gssapi==1.8.3
-python-gssapi==0.6.4
 cryptography==37.0.4
 requests==2.31.0
 charset-normalizer==3.2.0
