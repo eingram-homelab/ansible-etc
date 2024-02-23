@@ -1,3 +1,8 @@
+[test]
+test1
+test2
+test3
+
 [piholes]
 dietpi1.local.lan ansible_host=192.168.1.250
 dietpi2.local.lan ansible_host=192.168.1.251
