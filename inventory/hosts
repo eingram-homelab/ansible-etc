@@ -39,9 +39,12 @@ charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 ansible_user=ansible
 ansible_become_method=runas
 ansible_become_user=ansible
-ansible_connection=winrm
+ansible_connection=psrp
 ansible_port=5985
-ansible_winrm_transport=ntlm
+ansible_psrp_cert_validation=ignore
+ansible_psrp_auth=kerberos
+ansible_psrp_port=5985
+ansible_become_method=runas
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
 
 [test:vars]
