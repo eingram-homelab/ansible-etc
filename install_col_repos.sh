@@ -1,3 +1,9 @@
+# Run in code/ansible
+
+mkdir ~/code/ansible/collections/ansible_collections/eingram23
+ansible-galaxy collection install -r requirements.yml -p ~/code/ansible/collections
+cd ~/code/ansible/collections/ansible_collections/eingram23
+
 git clone git@github.com:eingram23/ansible-col-homelab.git ./homelab
 git clone git@github.com:eingram23/ansible-col-containers.git ./containers
 git clone git@github.com:eingram23/ansible-col-tf_build.git ./tf_build
