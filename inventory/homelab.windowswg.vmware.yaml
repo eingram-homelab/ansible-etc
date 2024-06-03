@@ -26,15 +26,17 @@ compose:
   ansible_host: '(config.name+"."+guest.ipStack.0.dnsConfig.domainName)'
   ansible_user: "'ansible'"
   ansible_become_user: "'ansible'"
-  ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
-  ansible_become_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
-  ansible_connection: "'psrp'"
-  ansible_psrp_cert_validation: "'ignore'"
-  ansible_psrp_auth: "'ntlm'"
-  ansible_psrp_port: "'5985'"
+  # ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+  # ansible_become_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+  # ansible_connection: "'psrp'"
+  # ansible_psrp_cert_validation: "'ignore'"
+  # ansible_psrp_auth: "'ntlm'"
+  # ansible_psrp_port: "'5985'"
   ansible_become_method: "'runas'"
-  ansible_psrp_message_encryption: "'never'"
-
+  # ansible_psrp_message_encryption: "'never'"
+  ansible_connection: "'winrm'"
+  ansible_port: "'5985'"
+  ansible_winrm_transport: "'ntlm'"
   folder: path.split('/')[-1]
 # groups:
 #   tools: guest.toolsVersionStatus == 'guestToolsCurrent'

@@ -36,15 +36,9 @@ charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
 [WindowsWG:vars]
-ansible_user=ansible
-ansible_become_method=runas
-ansible_become_user=ansible
-ansible_connection=psrp
-ansible_port=5985
-ansible_psrp_cert_validation=ignore
-ansible_psrp_auth=kerberos
-ansible_psrp_port=5985
-ansible_become_method=runas
+ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+
+[WindowsHL:vars]
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
 
 [test:vars]
