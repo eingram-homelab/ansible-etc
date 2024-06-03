@@ -12,6 +12,7 @@ collections:
   - google.cloud
   - chocolatey.chocolatey
   - community.hashi_vault
+  - ansible.windows
   - community.windows
   - operator_sdk.util
   - community.docker
