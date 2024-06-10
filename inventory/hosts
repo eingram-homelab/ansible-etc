@@ -1,11 +1,5 @@
-[test]
-test1
-test2
-test3
-
 [piholes]
 dietpi1.local.lan ansible_host=192.168.1.250
-dietpi2.local.lan ansible_host=192.168.1.251
 
 [piholes:vars]
 ansible_user=ansible
@@ -13,7 +7,6 @@ ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwor
 
 [Linux]
 dietpi1.local.lan
-dietpi2.local.lan
 
 [Windows:children]
 WindowsWG
@@ -39,13 +32,4 @@ charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
 
 [WindowsHL:vars]
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
-
-[test:vars]
-ansible_user=ansible
-ansible_become_method=runas
-ansible_become_user=ansible
-ansible_connection=psrp
-ansible_port=5985
-ansible_psrp_auth=ntlm
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
