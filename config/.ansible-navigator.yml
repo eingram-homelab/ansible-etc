@@ -1,0 +1,116 @@
+# # cspell:ignore cmdline, workdir
+---
+ansible-navigator:
+#
+  ansible:
+    config:
+      help: False
+      # path: /tmp/ansible-config/ansible.cfg
+#     cmdline: "--forks 15"
+#     doc:
+#       help: False
+#       plugin:
+#         name: shell
+#         type: become
+    inventory:
+      help: False
+      entries:
+        - ~/code/ansible/ansible-etc/inventory/ycdisp.do_hosts.yaml
+        - ~/code/ansible/ansible-etc/inventory/homelab.linux.vmware.yaml
+        - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vmware.yaml
+        - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vmware.yaml
+        - ~/code/ansible/ansible-etc/inventory/hosts
+#     playbook:
+#       help: False
+#       path: /tmp/test_playbook.yml
+#
+#   ansible-builder:
+#     help: False
+#     workdir: /tmp/
+#
+#   ansible-lint:
+#     config: ~/ansible-lint.yml
+#     lintables: ~/myproject/
+#
+#   ansible-runner:
+#     artifact-dir: /tmp/test1
+#     rotate-artifacts-count: 10
+#     timeout: 300
+#     job-events: False
+#
+#   app: run
+#
+#   collection-doc-cache-path: /tmp/cache.db
+#
+#   color:
+#     enable: False
+#     osc4: False
+#
+#   editor:
+#     command: vim_from_setting
+#     console: False
+#
+#   enable-prompts: False
+#
+#   exec:
+#     shell: False
+#     command: /bin/foo
+#
+  execution-environment:
+    container-engine: podman
+    enabled: True
+    environment-variables:
+      pass:
+        - ANSIBLE_HASHI_VAULT_AUTH_METHOD
+        - ANSIBLE_HASHI_VAULT_ROLE_ID
+        - ANSIBLE_HASHI_VAULT_SECRET_ID
+        - ANSIBLE_HASHI_VAULT_ADDR
+      set:
+        ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections
+        ANSIBLE_CONFIG: /tmp/ansible-config/.ansible.cfg
+    image: localhost/homelab_awx_v4:1.2
+    pull:
+      # arguments:
+      #   - "--tls-verify=false"
+      policy: never
+    volume-mounts:
+      - src: "~/code/ansible/collections"
+        dest: "/usr/share/ansible/collections"
+        options: "Z"
+      - src: "~/code/ansible/ansible-etc/config"
+        dest: "/tmp/ansible-config"
+        options: "Z"
+    # container-options:
+    #   - "--net=host"
+#
+#   format: json
+#
+#   images:
+#     details:
+#       - ansible_version
+#       - python_version
+#
+#   inventory-columns:
+#     - ansible_network_os
+#     - ansible_network_cli_ssh_type
+#     - ansible_connection
+#
+  logging:
+    level: debug 
+    append: True
+    file: /tmp/ansible_log.txt
+
+  mode: stdout
+
+  playbook-artifact:
+    enable: False
+    replay: /tmp/test_artifact.json
+    save-as: /tmp/test_artifact.json
+#
+#   settings:
+#     effective: False
+#     sample: False
+#     schema: json
+#     sources: False
+#
+#   time-zone: Japan
