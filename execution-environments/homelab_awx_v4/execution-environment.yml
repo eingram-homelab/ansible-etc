@@ -33,12 +33,11 @@ additional_build_steps:
     - RUN yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
     - RUN dnf install -y terraform
     - ADD vault.ca /etc/vault.ca
-    - ADD helm /usr/local/bin/helm
-    - RUN chmod +x /usr/local/bin/helm
-    - ADD kustomize /usr/local/bin/kustomize
-    - RUN chmod +x /usr/local/bin/kustomize
-    - ADD kubectl /usr/local/bin/kubectl
+    - RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl"
+    - RUN mv ./kubectl /usr/local/bin
+    - RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
     - RUN chmod +x /usr/local/bin/kubectl
+    - RUN chmod +x /usr/local/bin/helm
     - ENV TF_CLI_ARGS_apply=-parallelism=1 \
           TF_CLI_ARGS_destroy=-parallelism=1 \
           TF_LOG=INFO

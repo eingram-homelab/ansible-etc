@@ -1,5 +1,5 @@
 # Virtual environment contents:
-pyvmomi==8.0.1.0.2
+pyvmomi==8.0.3.0.1
 hvac==1.2.1
 jsonpatch==1.33
 krb5==0.5.1

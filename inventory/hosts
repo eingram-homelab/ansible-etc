@@ -33,3 +33,6 @@ ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwor
 
 [WindowsHL:vars]
 ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+
+[test]
+test.test.test
