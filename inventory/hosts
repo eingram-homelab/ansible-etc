@@ -3,7 +3,7 @@ dietpi1.local.lan ansible_host=192.168.1.250
 
 [piholes:vars]
 ansible_user=ansible
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [Linux]
 dietpi1.local.lan
@@ -30,10 +30,10 @@ charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
 [WindowsWG:vars]
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [WindowsHL:vars]
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [MacOS]
-macbook-pro.local.lan ansible_user={{ linux_user}} ansible_ssh_private_key_file={{ linux_ansible_sshkey }} ansible_sshpass={{ linux_sshpass }}
+macbook-pro.local.lan ansible_user="{{ linux_user}}" ansible_ssh_private_key_file="{{ linux_ansible_sshkey }}" ansible_sshpass="{{ linux_sshpass }}"
