@@ -7,7 +7,7 @@ ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwo
 
 [Linux]
 dietpi1.local.lan
-homenas.local.lan
+homenas.local.lan ansible_user="{{ linux_user }}" ansible_ssh_private_key_file="{{ linux_sshkey }}"
 
 [Windows:children]
 WindowsWG
