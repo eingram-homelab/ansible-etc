@@ -1,0 +1,48 @@
+---
+collections:
+  # - name: community.vmware
+  # - name: community.general
+  # - name: containers.podman
+  # - name: community.mysql
+  # - name: kubernetes.core
+  # - name: lvrfrc87.git_acp
+  # - name: community.crypto
+  # - name: google.cloud
+  # - name: chocolatey.chocolatey
+  # - name: community.hashi_vault
+  # - name: community.windows
+  # - name: operator_sdk.util
+  # - name: community.docker
+  # - name: community.hashi_vault
+  # - name: ansible.posix
+  # - name: https://github.com/eingram23/ansible-col-homelab.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-pihole.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-tf_build.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-vsphere.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-splunk.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-monitoring.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-containers.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-database.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-kubernetes.git
+  #   type: git
+  #   version: main
+  # - name: https://github.com/eingram23/ansible-col-gcp.git
+  #   type: git
+  #   version: main
+
