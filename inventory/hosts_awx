@@ -8,6 +8,10 @@ dietpi2.local.lan
 homenas.local.lan
 yc-appsrv1.ycdisp.net
 
+[Linux:vars]
+ansible_user="{{ linux_user }}"
+ansible_ssh_private_key_file="{{ linux_sshkey }}"
+
 [Windows:children]
 WindowsWG
 WindowsHL
@@ -24,3 +28,14 @@ yesenia-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
+[WindowsHL:vars]
+ansible_user="{{ winhl_ansible_user }}"
+ansible_password="{{ winhl_ansible_password }}"
+ansible_become_user="{{ winhl_ansible_user }}"
+ansible_become_password="{{ winhl_ansible_password }}"
+
+[WindowsWG:vars]
+ansible_user="{{ winwg_ansible_user }}"
+ansible_password="{{ winwg_ansible_password }}"
+ansible_become_user="{{ winwg_ansible_user }}"
+ansible_become_password="{{ winwg_ansible_password }}"
