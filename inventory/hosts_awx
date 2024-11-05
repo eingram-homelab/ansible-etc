@@ -39,3 +39,7 @@ ansible_user="{{ winwg_ansible_user }}"
 ansible_password="{{ winwg_ansible_password }}"
 ansible_become_user="{{ winwg_ansible_user }}"
 ansible_become_password="{{ winwg_ansible_password }}"
+ansible_connection=psrp
+ansible_psrp_auth=ntlm
+ansible_psrp_port=5985
+ansible_become_method=runas

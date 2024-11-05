@@ -21,7 +21,7 @@ yc-appsrv1.ycdisp.net
 
 [digitalocean:vars]
 ansible_user=ansible
-ansible_password={{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [WindowsHL]
 
@@ -34,6 +34,10 @@ charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
 [WindowsWG:vars]
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+ansible_connection=psrp
+ansible_psrp_auth=ntlm
+ansible_psrp_port=5985
+ansible_become_method=runas
 
 [WindowsHL:vars]
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
