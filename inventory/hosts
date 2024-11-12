@@ -33,11 +33,14 @@ charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
 [WindowsWG:vars]
+ansible_user=ansible
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 ansible_connection=psrp
 ansible_psrp_auth=ntlm
 ansible_psrp_port=5985
 ansible_become_method=runas
+ansible_become_user=ansible
 
 [WindowsHL:vars]
+ansible_user=ansible@HOMELAB.LOCAL
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
