@@ -7,10 +7,10 @@ ansible_user=ansible
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [Linux]
-dietpi1.local.lan
-dietpi2.local.lan
-homenas.local.lan
-yc-appsrv1.ycdisp.net
+dietpi1.local.lan env=prod
+dietpi2.local.lan env=prod
+homenas.local.lan env=prod
+yc-appsrv1.ycdisp.net env=prod
 
 [Windows:children]
 WindowsWG

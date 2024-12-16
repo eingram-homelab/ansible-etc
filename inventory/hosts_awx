@@ -3,10 +3,10 @@ dietpi1.local.lan ansible_host=192.168.1.250
 dietpi2.local.lan ansible_host=192.168.1.251
 
 [Linux]
-dietpi1.local.lan
-dietpi2.local.lan
-homenas.local.lan
-yc-appsrv1.ycdisp.net
+dietpi1.local.lan env=prod
+dietpi2.local.lan env=prod
+homenas.local.lan env=prod
+yc-appsrv1.ycdisp.net env=prod
 
 [Linux:vars]
 ansible_user="{{ linux_user }}"
