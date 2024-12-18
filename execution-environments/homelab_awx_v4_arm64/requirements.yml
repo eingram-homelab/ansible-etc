@@ -15,6 +15,8 @@ collections:
 - name: community.docker
 - name: community.hashi_vault
 - name: ansible.posix
+- name: community.digitalocean
+
 # - name: https://github.com/eingram23/ansible-col-homelab.git
 #   type: git
 #   version: main
@@ -45,4 +47,3 @@ collections:
 # - name: https://github.com/eingram23/ansible-col-gcp.git
 #   type: git
 #   version: main
-
