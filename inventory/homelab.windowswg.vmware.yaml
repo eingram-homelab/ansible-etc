@@ -44,5 +44,9 @@ keyed_groups:
   - key: folder
     separator: ""
     # prefix: folder
+  - key: tags
+    separator: ''
+    # prefix: folder
 # - key: summary.runtime.powerState
 #   separator: ''
+with_tags: true

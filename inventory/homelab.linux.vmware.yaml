@@ -32,15 +32,9 @@ compose:
 keyed_groups:
   - key: folder
     separator: ""
+  - key: tags
+    separator: ''
     # prefix: folder
 # - key: summary.runtime.powerState
 #   separator: ''
-hostvars:
-  env: >
-    {{
-      (
-        'prod' if (item.parent | community.vmware.vmware_folder_info).folders[0].name == 'prod'
-        else 'dev' if (item.parent | community.vmware.vmware_folder_info).folders[0].name == 'dev'
-        else 'unknown'
-      )
-    }}
+with_tags: true

@@ -44,6 +44,9 @@ compose:
 keyed_groups:
   - key: folder
     separator: ""
+  - key: tags
+    separator: ''
     # prefix: folder
 # - key: summary.runtime.powerState
 #   separator: ''
+with_tags: true
