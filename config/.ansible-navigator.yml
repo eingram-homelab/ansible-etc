@@ -15,7 +15,7 @@ ansible-navigator:
     inventory:
       help: False
       entries:
-      - ~/code/ansible/ansible-etc/inventory/ycdisp.do_hosts.yaml
+      - ~/code/ansible/ansible-etc/inventory/ycdisp_do_hosts.yaml
       - ~/code/ansible/ansible-etc/inventory/homelab.linux.vmware.yaml
       - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vmware.yaml
       - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vmware.yaml

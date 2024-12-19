@@ -19,9 +19,9 @@ WindowsHL
 # [digitalocean]
 # yc-appsrv1.ycdisp.net
 
-[digitalocean:vars]
-ansible_user=ansible
-ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+# [digitalocean:vars]
+# ansible_user=ansible
+# ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [WindowsHL]
 
