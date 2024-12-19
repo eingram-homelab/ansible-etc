@@ -26,8 +26,8 @@ compose:
   ansible_host: '(config.name+"."+guest.ipStack.0.dnsConfig.domainName)'
   ansible_user: "'ansible'"
   ansible_become_user: "'ansible'"
-  # ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
-  # ansible_become_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+  ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+  ansible_become_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
   ansible_connection: "'psrp'"
   # ansible_psrp_cert_validation: "'ignore'"
   ansible_psrp_auth: "'ntlm'"
