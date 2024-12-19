@@ -45,8 +45,12 @@ ansible_become_user=ansible
 ansible_user=ansible@HOMELAB.LOCAL
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
+[prod]
+
 [prod:vars]
 env=prod
+
+[dev]
 
 [dev:vars]
 env=dev
