@@ -20,6 +20,8 @@ keyed_groups:
     prefix: ''
     separator: ''
 compose:
+  ansible_user: "ansible"
+  ansible_connection: "ssh"
   ansible_host: do_networks.v4 | selectattr('type','eq','public')
     | map(attribute='ip_address') | first
   # class: do_size.description | lower
