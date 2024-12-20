@@ -74,8 +74,8 @@ ansible-navigator:
       #   - "--tls-verify=false"
       policy: never
     volume-mounts:
-    - src: "~/code/ansible/collections"
-      dest: "/usr/share/ansible/collections"
+    - src: "~/code/ansible/collections/ansible_collections/eingram23"
+      dest: "/usr/share/ansible/collections/ansible_collections/eingram23"
       options: "Z"
     - src: "~/code/ansible/ansible-etc/config"
       dest: "/tmp/ansible-config"
