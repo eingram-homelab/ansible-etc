@@ -24,7 +24,8 @@ resources:
     - Linux
 compose:
   ansible_host: guest.ipAddress
-  ansible_user: "ansible"
+  ansible_user: "'ansible'"
+  # ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
   ansible_connection: "ssh"
   folder: path.split('/')[-1]
 # groups:

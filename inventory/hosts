@@ -2,27 +2,21 @@
 dietpi1.local.lan ansible_host=192.168.1.250
 dietpi2.local.lan ansible_host=192.168.1.251
 
-# [piholes:vars]
-# ansible_user=ansible
-# ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
-
 [Linux]
 dietpi1.local.lan
 dietpi2.local.lan
 homenas.local.lan
 yc-appsrv1.ycdisp.net
 
-[Windows:children]
-WindowsWG
-WindowsHL
+[Linux:vars]
+ansible_user=ansible
 
 [digitalocean]
 
 [digitalocean:vars]
 loki_url=http://yandchome.duckdns.org
 prom_url=http://yandchome.duckdns.org
-# ansible_user=ansible
-# ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [WindowsHL]
 
@@ -33,18 +27,25 @@ yesenia-laptop.local.lan mac_address=80:e8:2c:9c:e9:90
 charlize-pc.local.lan mac_address=1c:1b:0d:31:98:16
 charlize-laptop.local.lan mac_address=c0:3e:ba:6a:06:8a
 
-# [WindowsWG:vars]
-# ansible_user=ansible
-# ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
-# ansible_connection=psrp
-# ansible_psrp_auth=ntlm
-# ansible_psrp_port=5985
+[WindowsWG:vars]
+ansible_user=ansible
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+ansible_connection=psrp
+ansible_psrp_auth=ntlm
+ansible_psrp_port=5985
 # ansible_become_method=runas
 # ansible_become_user=ansible
 
-# [WindowsHL:vars]
-# ansible_user=ansible@HOMELAB.LOCAL
-# ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+[WindowsHL:vars]
+ansible_user=ansible@HOMELAB.LOCAL
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+ansible_connection=psrp
+ansible_psrp_auth=ntlm
+ansible_psrp_port=5985
+
+[Windows:children]
+WindowsWG
+WindowsHL
 
 [prod]
 dietpi1.local.lan
