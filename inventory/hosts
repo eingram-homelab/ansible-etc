@@ -14,8 +14,8 @@ ansible_user=ansible
 [digitalocean]
 
 [digitalocean:vars]
-loki_host=http://yandchome.duckdns.org
-prom_host=http://yandchome.duckdns.org
+loki_host=http://yandchome.duckdns.org:3100
+prom_host=http://yandchome.duckdns.org:9090
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [WindowsHL]
