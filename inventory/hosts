@@ -10,7 +10,7 @@ yc-appsrv1.ycdisp.net
 
 [Linux:vars]
 ansible_user="{{ linux_user }}"
-ansible_ssh_private_key_file="{{ tower.filename.sshkey_file }}"
+ansible_ssh_private_key_file="{{ linux_sshkey }}"
 
 [digitalocean]
 
