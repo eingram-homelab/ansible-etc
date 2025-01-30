@@ -9,7 +9,8 @@ homenas.local.lan
 yc-appsrv1.ycdisp.net
 
 [Linux:vars]
-ansible_user=ansible
+ansible_user="{{ linux_user }}"
+ansible_sshkey="{{ linux_sshkey }}"
 
 [digitalocean]
 
