@@ -20,6 +20,7 @@ ansible-navigator:
       - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vmware.yaml
       - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vmware.yaml
       - ~/code/ansible/ansible-etc/inventory/hosts
+      - ~/code/ansible/ansible-etc/inventory/homelab_cmdb_postgres.yaml
   #     playbook:
   #       help: False
   #       path: /tmp/test_playbook.yml
