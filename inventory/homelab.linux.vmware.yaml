@@ -22,6 +22,7 @@ filters:
 resources:
   - folder:
     - Linux
+    - Rancher
 compose:
   ansible_host: guest.ipAddress
   ansible_user: "'ansible'"
