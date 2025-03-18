@@ -1,23 +1,24 @@
 ---
 collections:
-- awx.awx
-- community.postgresql
-- community.vmware
-- community.general
-- containers.podman
-- community.mysql
-- kubernetes.core
-- lvrfrc87.git_acp
-- community.crypto
-- google.cloud
-- chocolatey.chocolatey
+# - awx.awx
+# - community.postgresql
+# - community.vmware
+- vmware.vmware.vms
+# - community.general
+# - containers.podman
+# - community.mysql
+# - kubernetes.core
+# - lvrfrc87.git_acp
+# - community.crypto
+# - google.cloud
+# - chocolatey.chocolatey
 - community.hashi_vault
-- community.windows
-- operator_sdk.util
-- community.docker
-- community.hashi_vault
-- ansible.posix
+# - community.windows
+# - operator_sdk.util
+# - community.docker
+# - ansible.posix
 - community.digitalocean
+
 # - name: https://github.com/eingram23/ansible-col-homelab.git
 #   type: git
 #   version: main
