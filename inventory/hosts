@@ -9,8 +9,9 @@ homenas.local.lan
 yc-appsrv1.ycdisp.net
 
 [Linux:vars]
-ansible_user="{{ linux_user }}"
-ansible_ssh_private_key_file="{{ linux_sshkey }}"
+; ansible_user="{{ linux_user }}"
+; ansible_ssh_private_key_file="{{ linux_sshkey }}"
+ansible_user=ansible
 
 [digitalocean]
 
@@ -34,8 +35,8 @@ ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwo
 ansible_connection=psrp
 ansible_psrp_auth=ntlm
 ansible_psrp_port=5985
-# ansible_become_method=runas
-# ansible_become_user=ansible
+ansible_become_method=runas
+ansible_become_user=ansible
 
 [WindowsHL:vars]
 ansible_user=ansible@HOMELAB.LOCAL
