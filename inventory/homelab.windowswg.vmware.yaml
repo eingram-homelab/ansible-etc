@@ -30,6 +30,7 @@ compose:
   ansible_psrp_auth: "'ntlm'"
   ansible_psrp_port: "'5985'"
   ansible_become_method: "'runas'"
+  ansible_become_user: "'ansible'"
   # ansible_psrp_message_encryption: "'never'"
   # ansible_connection: "'winrm'"
   # ansible_port: "'5985'"
