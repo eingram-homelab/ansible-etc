@@ -1,5 +1,0 @@
-# Add additional binaries here
-python3-devel [platform:rpm compile]
-krb5-devel [platform:rpm]
-gcc [platform:rpm]
-jq [platform:rpm]
