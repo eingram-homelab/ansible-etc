@@ -75,7 +75,7 @@ ansible-navigator:
     pull:
       # arguments:
       #   - "--tls-verify=false"
-      policy: never
+      policy: missing
     volume-mounts:
     - src: "~/code/ansible/collections/ansible_collections/eingram23"
       dest: "/usr/share/ansible/collections/ansible_collections/eingram23"
