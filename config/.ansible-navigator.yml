@@ -71,7 +71,7 @@ ansible-navigator:
       set:
         ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections
         ANSIBLE_CONFIG: /tmp/ansible-config/.ansible.cfg
-    image: localhost/homelab_awx_arm64:1.6.0
+    image: localhost/homelab_awx_kafka_arm64:1.0.1
     pull:
       # arguments:
       #   - "--tls-verify=false"
