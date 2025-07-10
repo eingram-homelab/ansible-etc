@@ -7,6 +7,7 @@ dietpi1.local.lan
 dietpi2.local.lan
 homenas.local.lan
 yc-appsrv1.ycdisp.net
+test.local.lan ansible_host=12.12.12.12
 
 [Linux:vars]
 ; ansible_user="{{ linux_user }}"
@@ -36,7 +37,7 @@ ansible_connection=psrp
 ansible_psrp_auth=ntlm
 ansible_psrp_port=5985
 ansible_become_method=runas
-ansible_become_user=ansible
+; ansible_become_user=ansible
 
 [WindowsHL:vars]
 ansible_user=ansible@HOMELAB.LOCAL
