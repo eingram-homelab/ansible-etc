@@ -1,4 +1,4 @@
-plugin: community.vmware.vmware_vm_inventory
+plugin: vmware.vmware.vms
 strict: False
 hostname: vcsa-1.local.lan
 username: administrator@vsphere.local
@@ -19,29 +19,24 @@ hostnames:
   - 'config.name'
 filters:
   - runtime.powerState == "poweredOn"
-resources:
-  - folder:
-    - WindowsWG
+# resources:
+#   - folder:
+#     - Linux
+#     - Rancher
+search_paths:
+  - /HomeLab Datacenter/Linux
+  - /HomeLab Datacenter/Rancher
 compose:
-  ansible_host: '(config.name+"."+guest.ipStack.0.dnsConfig.domainName)'
+  ansible_host: guest.ipAddress
   ansible_user: "'ansible'"
-  ansible_connection: "'psrp'"
-  # ansible_psrp_cert_validation: "'ignore'"
-  ansible_psrp_auth: "'ntlm'"
-  ansible_psrp_port: "'5985'"
-  ansible_become_method: "'runas'"
-  ansible_become_user: "'ansible'"
-  # ansible_psrp_message_encryption: "'never'"
-  # ansible_connection: "'winrm'"
-  # ansible_port: "'5985'"
-  # ansible_winrm_transport: "'ntlm'"
+  # ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+  ansible_connection: "ssh"
   folder: path.split('/')[-1]
 # groups:
 #   tools: guest.toolsVersionStatus == 'guestToolsCurrent'
 keyed_groups:
   - key: folder
     separator: ""
-    # prefix: folder
   - key: tags
     separator: ''
     # prefix: folder

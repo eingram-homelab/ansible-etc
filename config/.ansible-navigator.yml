@@ -16,9 +16,9 @@ ansible-navigator:
       help: False
       entries:
       - ~/code/ansible/ansible-etc/inventory/ycdisp_do_hosts.yaml
-      - ~/code/ansible/ansible-etc/inventory/homelab.linux.vmware.yaml
-      - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vmware.yaml
-      - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vmware.yaml
+      - ~/code/ansible/ansible-etc/inventory/homelab.linux.vms.yaml
+      - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vms.yaml
+      - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vms.yaml
       - ~/code/ansible/ansible-etc/inventory/hosts
       # - ~/code/ansible/ansible-etc/inventory/homelab_cmdb_postgres.yaml
       #     playbook:
@@ -71,7 +71,7 @@ ansible-navigator:
       set:
         ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections
         ANSIBLE_CONFIG: /tmp/ansible-config/.ansible.cfg
-    image: localhost/homelab_awx_kafka-arm64:1.0.3
+    image: localhost/homelab_awx_kafka-arm64:1.0.1
     # image: localhost/homelab_awx:1.6.0
     pull:
       # arguments:

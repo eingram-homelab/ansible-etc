@@ -2,7 +2,7 @@
 collections:
 # - awx.awx
 # - community.postgresql
-- community.vmware
+- vmware.vmware
 # - community.general
 # - containers.podman
 # - community.mysql
