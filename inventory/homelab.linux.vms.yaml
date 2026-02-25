@@ -4,7 +4,6 @@ hostname: vcsa-1.local.lan
 username: administrator@vsphere.local
 password: "{{ lookup('hashi_vault', 'secret=secret/vsphere/vcsa:vsphere_password') }}"
 validate_certs: False
-with_path: yes
 properties:
   - 'config.name'
   - 'guest.ipAddress'
@@ -18,14 +17,10 @@ hostnames:
   - 'config.name+"."+guest.ipStack.0.dnsConfig.domainName'
   - 'config.name'
 filters:
-  - runtime.powerState == "poweredOn"
-# resources:
-#   - folder:
-#     - Linux
-#     - Rancher
+  - runtime.powerState == "poweredOff"
 search_paths:
-  - /HomeLab Datacenter/Linux
-  - /HomeLab Datacenter/Rancher
+  - /HomeLab Datacenter/vm/Linux
+  - /HomeLab Datacenter/vm/Rancher
 compose:
   ansible_host: guest.ipAddress
   ansible_user: "'ansible'"
@@ -42,4 +37,4 @@ keyed_groups:
     # prefix: folder
 # - key: summary.runtime.powerState
 #   separator: ''
-with_tags: true
+gather_tags: false
