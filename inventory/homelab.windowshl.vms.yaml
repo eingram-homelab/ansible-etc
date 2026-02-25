@@ -1,10 +1,9 @@
-plugin: community.vmware.vmware_vm_inventory
+plugin: vmware.vmware.vms
 strict: False
 hostname: vcsa-1.local.lan
 username: administrator@vsphere.local
 password: "{{ lookup('hashi_vault', 'secret=secret/vsphere/vcsa:vsphere_password') }}"
 validate_certs: False
-with_path: yes
 properties:
   - 'config.name'
   - 'guest.ipAddress'
@@ -18,20 +17,22 @@ hostnames:
   - 'config.name+"."+guest.ipStack.0.dnsConfig.domainName'
   - 'config.name'
 filters:
-  - runtime.powerState == "poweredOn"
-resources:
-  - folder:
-    - WindowsWG
+  - runtime.powerState == "poweredOff"
+search_paths:
+  - /HomeLab Datacenter/vm/WindowsHL
 compose:
   ansible_host: '(config.name+"."+guest.ipStack.0.dnsConfig.domainName)'
-  ansible_user: "'ansible'"
+  ansible_user: "'ansible@HOMELAB.LOCAL'"
+  ansible_become_user: "'ansible@HOMELAB.LOCAL'"
+  ansible_become_method: "'runas'"
+  # ansible_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+  # ansible_become_password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
   ansible_connection: "'psrp'"
   # ansible_psrp_cert_validation: "'ignore'"
   ansible_psrp_auth: "'ntlm'"
   ansible_psrp_port: "'5985'"
-  ansible_become_method: "'runas'"
-  ansible_become_user: "'ansible'"
-  # ansible_psrp_message_encryption: "'never'"
+  # ansible_psrp_protocol: "'http'"
+  # ansible_psrp_negotiate_service: "'HTTP'"
   # ansible_connection: "'winrm'"
   # ansible_port: "'5985'"
   # ansible_winrm_transport: "'ntlm'"
@@ -41,10 +42,9 @@ compose:
 keyed_groups:
   - key: folder
     separator: ""
-    # prefix: folder
   - key: tags
     separator: ''
     # prefix: folder
 # - key: summary.runtime.powerState
 #   separator: ''
-with_tags: true
+gather_tags: false
