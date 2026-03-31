@@ -43,7 +43,7 @@ collections:
 # - name: https://github.com/eingram23/ansible-col-database.git
 #   type: git
 #   version: main
-# - name: https://github.com/eingram23/ansible-col-kubernetes.git
+# - name: https://github.com/eingram-homelab/ansible-col-kubernetes.git
 #   type: git
 #   version: main
 # - name: https://github.com/eingram23/ansible-col-gcp.git
