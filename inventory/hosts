@@ -21,6 +21,14 @@ loki_host=http://yandchome.duckdns.org:3100
 prom_host=http://yandchome.duckdns.org:9090
 ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
+[proxmox]
+pve1.local.lan
+pve2.local.lan
+pve3.local.lan
+
+[proxmox:vars]
+ansible_user=ansible
+
 [WindowsHL]
 
 [WindowsWG]
