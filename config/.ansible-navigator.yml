@@ -5,7 +5,7 @@ ansible-navigator:
   ansible:
     config:
       help: False
-      # path: /tmp/ansible-config/ansible.cfg
+      # path: /tmp/ansible-config/.ansible.cfg
       #     cmdline: "--forks 15"
       #     doc:
       #       help: False
@@ -15,12 +15,12 @@ ansible-navigator:
     inventory:
       help: False
       entries:
-      - ~/code/ansible/ansible-etc/inventory/ycdisp_do_hosts.yaml
-      - ~/code/ansible/ansible-etc/inventory/homelab.linux.vms.yaml
-      - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vms.yaml
-      - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vms.yaml
-      - ~/code/ansible/ansible-etc/inventory/hosts
-      # - ~/code/ansible/ansible-etc/inventory/homelab_cmdb_postgres.yaml
+        - ~/code/ansible/ansible-etc/inventory/ycdisp_do_hosts.yaml
+        - ~/code/ansible/ansible-etc/inventory/homelab.linux.vms.yaml
+        - ~/code/ansible/ansible-etc/inventory/homelab.windowshl.vms.yaml
+        - ~/code/ansible/ansible-etc/inventory/homelab.windowswg.vms.yaml
+        - ~/code/ansible/ansible-etc/inventory/hosts
+        - ~/code/ansible/ansible-etc/inventory/homelab_cmdb_postgres.yaml
       #     playbook:
       #       help: False
       #       path: /tmp/test_playbook.yml
@@ -62,12 +62,12 @@ ansible-navigator:
     enabled: True
     environment-variables:
       pass:
-      - ANSIBLE_HASHI_VAULT_AUTH_METHOD
-      - ANSIBLE_HASHI_VAULT_ROLE_ID
-      - ANSIBLE_HASHI_VAULT_SECRET_ID
-      - ANSIBLE_HASHI_VAULT_ADDR
-      - VAULT_ADDR
-      - VAULT_TOKEN
+        - ANSIBLE_HASHI_VAULT_AUTH_METHOD
+        - ANSIBLE_HASHI_VAULT_ROLE_ID
+        - ANSIBLE_HASHI_VAULT_SECRET_ID
+        - ANSIBLE_HASHI_VAULT_ADDR
+        - VAULT_ADDR
+        - VAULT_TOKEN
       set:
         ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections
         ANSIBLE_CONFIG: /tmp/ansible-config/.ansible.cfg
@@ -78,12 +78,12 @@ ansible-navigator:
       #   - "--tls-verify=false"
       policy: missing
     volume-mounts:
-    - src: "~/code/ansible/collections/ansible_collections/eingram23"
-      dest: "/usr/share/ansible/collections/ansible_collections/eingram23"
-      options: "Z"
-    - src: "~/code/ansible/ansible-etc/config"
-      dest: "/tmp/ansible-config"
-      options: "Z"
+      - src: "~/code/ansible/collections/ansible_collections/eingram23"
+        dest: "/usr/share/ansible/collections/ansible_collections/eingram23"
+        options: "Z"
+      - src: "~/code/ansible/ansible-etc/config"
+        dest: "/tmp/ansible-config"
+        options: "Z"
     # container-options:
     #   - "--net=host"
     #
@@ -101,10 +101,14 @@ ansible-navigator:
     #
   logging:
     level: debug
-    append: True
+    append: False
     file: /tmp/ansible_log.txt
 
   mode: stdout
+
+  color:
+    enable: true
+    osc4: true
 
   playbook-artifact:
     enable: False
