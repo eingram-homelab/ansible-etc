@@ -1,11 +1,11 @@
 [dietpi]
 dietpi1.local.lan ansible_host=192.168.1.250
-dietpi2.local.lan ansible_host=192.168.1.251
 
 [Linux]
 dietpi1.local.lan
 dietpi2.local.lan
 homenas.local.lan
+homenas.ycdisp.net
 yc-appsrv1.ycdisp.net
 test.local.lan ansible_host=12.12.12.12
 
@@ -25,6 +25,15 @@ ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwo
 pve1.local.lan
 pve2.local.lan
 pve3.local.lan
+
+[esxi]
+esxinuc1.local.lan
+esxinuc2.local.lan
+esxinuc3.local.lan
+
+[esxi:vars]
+ansible_user=root
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
 
 [proxmox:vars]
 ansible_user=ansible
