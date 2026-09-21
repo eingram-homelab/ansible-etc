@@ -1,9 +1,9 @@
 plugin: vmware.vmware.vms
 strict: False
-hostname: vcsa-1.local.lan
-username: administrator@vsphere.local
-password: "{{ lookup('hashi_vault', 'secret=secret/vsphere/vcsa:vsphere_password') }}"
-validate_certs: False
+hostname: vcsa-1.company.ycdisp.com
+username: eingram@ycdisp.com
+password: "{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+validate_certs: True
 properties:
   - 'config.name'
   - 'guest.ipAddress'

@@ -17,8 +17,11 @@ ansible-navigator:
       entries:
         - ~/github/ansible/ansible-etc/inventory/ycdisp_do_hosts.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.linux.vms.yaml
+        - ~/github/ansible/ansible-etc/inventory/homelab.linux.vcsa-2.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.windowshl.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.windowswg.vms.yaml
+        - ~/github/ansible/ansible-etc/inventory/homelab.windowsycd.vms.yaml
+        - ~/github/ansible/ansible-etc/inventory/homelab.windowsycd.vcsa-2.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/hosts
         # - ~/github/ansible/ansible-etc/inventory/homelab_cmdb_postgres.yaml
       #     playbook:
@@ -71,7 +74,7 @@ ansible-navigator:
       set:
         ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections
         ANSIBLE_CONFIG: /tmp/ansible-config/.ansible.cfg
-    image: localhost/homelab_awx_kafka-arm64:1.0.2
+    image: localhost/homelab_awx_kafka-arm64:1.0.3
     # image: localhost/homelab_awx:1.6.0
     pull:
       # arguments:
@@ -101,7 +104,7 @@ ansible-navigator:
     #
   logging:
     level: debug
-    append: False
+    append: True
     file: /tmp/ansible_log.txt
 
   mode: stdout

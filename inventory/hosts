@@ -26,10 +26,19 @@ pve1.local.lan
 pve2.local.lan
 pve3.local.lan
 
-[esxi]
+[esxinuc]
 esxinuc1.local.lan
 esxinuc2.local.lan
 esxinuc3.local.lan
+
+[esxigmk]
+esxigmk1.company.ycdisp.com mgmt_ip=192.168.100.201 vmotion_ip=172.16.0.201 vsan_ip=172.16.1.201
+esxigmk2.company.ycdisp.com mgmt_ip=192.168.100.202 vmotion_ip=172.16.0.202 vsan_ip=172.16.1.202
+esxigmk3.company.ycdisp.com mgmt_ip=192.168.100.203 vmotion_ip=172.16.0.203 vsan_ip=172.16.1.203
+
+[esxi:children]
+esxinuc
+esxigmk
 
 [esxi:vars]
 ansible_user=root
@@ -39,6 +48,10 @@ ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_passwo
 ansible_user=ansible
 
 [WindowsHL]
+
+[WindowsYCD]
+asus-laptop.company.ycdisp.com
+yesenia-laptop.company.ycdisp.com
 
 [WindowsWG]
 bo-pc.local.lan mac_address=1c:1b:0d:38:a9:d6
@@ -63,9 +76,19 @@ ansible_connection=psrp
 ansible_psrp_auth=ntlm
 ansible_psrp_port=5985
 
+[WindowsYCD:vars]
+ansible_user=ansible@YCDISP.COM
+ansible_password="{{ lookup('hashi_vault', 'secret=secret/ssh/eingram:ssh_password') }}"
+ansible_connection=psrp
+ansible_psrp_auth=ntlm
+ansible_psrp_port=5985
+ansible_become_method=runas
+ansible_become_user=ansible@YCDISP.COM
+
 [Windows:children]
 WindowsWG
 WindowsHL
+WindowsYCD
 
 [prod]
 dietpi1.local.lan
@@ -80,3 +103,4 @@ env=prod
 
 [dev:vars]
 env=dev
+
