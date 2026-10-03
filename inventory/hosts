@@ -7,6 +7,7 @@ dietpi2.local.lan
 homenas.local.lan
 homenas.ycdisp.net
 yc-appsrv1.ycdisp.net
+yc-appsrv1-dev.ycdisp.net
 test.local.lan ansible_host=12.12.12.12
 
 [Linux:vars]
@@ -104,3 +105,10 @@ env=prod
 [dev:vars]
 env=dev
 
+[ycd-rke2]
+ycd-rke2-cp1.ycdisp.net
+ycd-rke2-cp2.ycdisp.net
+ycd-rke2-cp3.ycdisp.net
+ycd-rke2-wk1.ycdisp.net
+ycd-rke2-wk2.ycdisp.net
+ycd-rke2-wk3.ycdisp.net
