@@ -17,11 +17,9 @@ ansible-navigator:
       entries:
         - ~/github/ansible/ansible-etc/inventory/ycdisp_do_hosts.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.linux.vms.yaml
-        - ~/github/ansible/ansible-etc/inventory/homelab.linux.vcsa-2.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.windowshl.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.windowswg.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/homelab.windowsycd.vms.yaml
-        - ~/github/ansible/ansible-etc/inventory/homelab.windowsycd.vcsa-2.vms.yaml
         - ~/github/ansible/ansible-etc/inventory/hosts
         # - ~/github/ansible/ansible-etc/inventory/homelab_cmdb_postgres.yaml
       #     playbook:

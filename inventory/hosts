@@ -1,10 +1,9 @@
 [dietpi]
-dietpi1.local.lan ansible_host=192.168.1.250
+dns2.ycdisp.net ansible_host=192.168.1.250
 
 [Linux]
-dietpi1.local.lan
-dietpi2.local.lan
-homenas.local.lan
+dns1.ycdisp.net
+dns2.ycdisp.net
 homenas.ycdisp.net
 yc-appsrv1.ycdisp.net
 yc-appsrv1-dev.ycdisp.net
@@ -92,9 +91,9 @@ WindowsHL
 WindowsYCD
 
 [prod]
-dietpi1.local.lan
-dietpi2.local.lan
-homenas.local.lan
+dns1.ycdisp.net
+dns2.ycdisp.net
+homenas.ycdisp.net
 yc-appsrv1.ycdisp.net
 
 [prod:vars]
@@ -105,10 +104,10 @@ env=prod
 [dev:vars]
 env=dev
 
-[ycd-rke2]
-ycd-rke2-cp1.ycdisp.net
-ycd-rke2-cp2.ycdisp.net
-ycd-rke2-cp3.ycdisp.net
-ycd-rke2-wk1.ycdisp.net
-ycd-rke2-wk2.ycdisp.net
-ycd-rke2-wk3.ycdisp.net
+[k3s-clus1]
+k3s-clus1-cp1.ycdisp.net
+k3s-clus1-worker1.ycdisp.net
+k3s-clus1-worker2.ycdisp.net
+
+[k8s:children]
+k3s-clus1
