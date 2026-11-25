@@ -37,4 +37,4 @@ keyed_groups:
     # prefix: folder
 # - key: summary.runtime.powerState
 #   separator: ''
-gather_tags: false
+gather_tags: true
